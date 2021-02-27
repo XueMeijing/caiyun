@@ -6,7 +6,7 @@ class Wave{
     this.speedY = 0;
     this.speedX = 0;
     this.init();
-    this.color = colors[Math.floor( Math.random() * 526 )].hex
+    this.color = colors[Math.floor( Math.random() * colors.length )].hex
   }
 
   init(){
@@ -15,7 +15,7 @@ class Wave{
   }
 
   reset(){
-    this.w = window.innerWidth + 540;
+    this.w = window.innerWidth + 1080;
     this.h = window.innerHeight;
     this.canvas.width = this.w;
     this.canvas.height = this.h;
