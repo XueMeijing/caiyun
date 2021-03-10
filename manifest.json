@@ -1,7 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "彩云",
+  "name": "__MSG_name__",
   "version": "0.1.0",
+  "default_locale": "zh_CN",
   "description": "修改新标签页，替换为古诗词。学习中，参考插件几枝，几枝的审美我太爱了",
   "homepage_url": "https://aihanyan.com",
   "icons": {

@@ -1,0 +1,10 @@
+{
+  "name": {
+    "description": "the entension name",
+    "message": "caiyun"
+  },
+  "newTabName": {
+     "description": "the new tab name",
+     "message": "New Tab"
+  }
+}

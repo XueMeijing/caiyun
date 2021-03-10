@@ -1,0 +1,10 @@
+{
+  "name": {
+    "description": "插件名称",
+    "message": "彩云"
+  },
+  "newTabName": {
+     "description": "新标签页名称",
+     "message": "新标签页"
+  }
+}

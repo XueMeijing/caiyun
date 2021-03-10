@@ -64,6 +64,8 @@ class Wave{
 
 new Wave();
 
+document.title=chrome.i18n.getMessage("newTabName")
+
 window.onresize = function() {
   document.getElementById('canvas').setAttribute("width", document.body.clientWidth)
   document.getElementById('canvas').setAttribute("height", document.body.clientHeight)
@@ -86,15 +88,18 @@ document.addEventListener("keydown", (event) => {
   }
 })
 chrome.storage.local.get("data",function(result){
-  var verse= result.data || {content: "当时明月在，曾照彩云归",origin: {title: "临江仙", author: "晏几道"}}
+  var verse= result.data || localVerses[Math.floor( Math.random() * localVerses.length )]
   document.querySelector(".verses-content").innerHTML = verse.content
   document.querySelector(".verses-title").innerHTML = `「${verse.origin.title}」`
   document.querySelector(".verses-stamp").classList.add("verses-stamp-active")
   document.querySelector(".verses-stamp").innerHTML = verse.origin.author
   jinrishici.load(function(result) {
-    // 自己的处理逻辑
     var { data={} } = result
-    chrome.storage.local.set({data})
+    if(data.hasOwnProperty()) {
+      chrome.storage.local.set({data})
+    } else {
+      chrome.storage.local.set({result})
+    }
   });
 })
 
